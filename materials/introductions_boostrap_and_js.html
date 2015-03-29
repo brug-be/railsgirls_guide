@@ -1,0 +1,67 @@
+<html>
+<head>
+  <title>About 42</title>
+  <script src="http://code.jquery.com/jquery-1.11.2.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+  <style>
+    #picture {
+      width: 50px;
+      margin: 10px;
+    }
+    .container {
+      max-width: 960px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="clearfix">
+      <img id="picture" class="pull-left" src="http://railsgirls.com/images/railsgirls-sq.png" />
+      <h1> My name is 42. </h1>
+    </header>
+    <div class="row">
+      <div class="col-sm-8">
+        <p class="well">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+      <div class="col-sm-4">
+        <ul>
+          <li><strong>Age</strong> I am 42 years old, 4 months and 2 days.</li>
+          <li><strong>Location</strong> Leuven</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <h2>Hobbies</h2>
+        <ul class="list-group">
+          <li class="list-group-item">Painting</li>
+          <li class="list-group-item">Eating</li>
+          <li class="list-group-item hide">Cooking</li>
+          <li class="list-group-item hide">Whatever</li>
+        </ul>
+      </div>
+      <div class="col-sm-6">
+        <h2>Languages</h2>
+        <ul class="list-group">
+          <li class="list-group-item">Dutch</li>
+          <li class="list-group-item">English</li>
+          <li class="list-group-item hide">Html</li>
+        </ul>
+      </div>
+    </div>
+    <a href="#" class="show-more btn btn-primary btn-block">Show more</a>
+    <footer>
+      Created by 42 in 2015.
+    </footer>
+  </div>
+  <script charset="utf-8">
+    $('a.show-more').click(function() {
+      $('.list-group-item.hide').removeClass('hide');
+      $('a.show-more').addClass('hide');
+    });
+  </script>
+</body>
+</html>
