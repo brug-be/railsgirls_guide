@@ -161,7 +161,7 @@ You can now explain the magic of rails, why this works without writing the actio
 
 To trigger the "need" for layouts we will now add a menu to one of the pages.
 
-```
+```html
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
