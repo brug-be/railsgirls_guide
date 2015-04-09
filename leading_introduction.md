@@ -1,3 +1,9 @@
+---
+layout: default
+title: Introduction
+permalink: /introduction/
+--- 
+
 # Introduction for the lead of the event
 
 This page is meant to for the lead or organiser of the event. This page covers how to introduce the conscepts of HTML/CSS/JS, Ruby and Ruby on Rails

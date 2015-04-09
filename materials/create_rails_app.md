@@ -1,3 +1,9 @@
+---
+layout: default
+title: Create Rails App
+permalink: /create_rails_app/
+--- 
+
 # Create the rails app
 
 * rails g myapp

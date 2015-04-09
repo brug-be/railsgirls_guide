@@ -1,3 +1,9 @@
+---
+layout: default
+title: Coach Guide
+permalink: /coach_guide/
+--- 
+
 # Creating you first HTML page
 
 Create a short “about me” page
