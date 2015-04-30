@@ -2,22 +2,24 @@
 layout: default
 title: Create Rails App
 permalink: /create_rails_app/
---- 
+---
 
 # Create the rails app
 
-* rails g myapp
-* cd myapp
-* mv INTRODUCTION_FILE public/
+```Bash
+rails g myapp
+cd myapp
+mv INTRODUCTION_FILE public/
+```
 
 ## Start rails app
 
-* rails s
+* `rails s`
 * visit http://localhost:3000/introductions.html
 
 # Create pages controller
 
-* rails g controller pages
+* `rails g controller pages`
 * Add the route
 
 ```ruby
@@ -33,7 +35,7 @@ end
 ```
 
 * visit http://localhost:3000/pages/introductions
-* mv public/introductions.html app/views/pages/introductions.html.erb
+* `mv public/introductions.html app/views/pages/introductions.html.erb`
 
 * Remove the render call
 
