@@ -6,17 +6,17 @@ permalink: /introduction/
 
 # Introduction for the lead of the event
 
-This page is meant to for the lead or organiser of the event. This page covers how to introduce the conscepts of HTML/CSS/JS, Ruby and Ruby on Rails
+This page is meant to for the lead or organiser of the event. This page covers how to introduce the concepts of HTML/CSS/JS, Ruby and Ruby on Rails.
 
 # HTML/CSS/JS
 
-Html, css and js are the languages that browsers understand. A web server's job is to create "files" that use these languages and send them to the browser.
+HTML, CSS and JS are the languages that browsers understand. A web server's job is to create "files" that use these languages and send them to the browser.
 
 There are several way of doing this.
 
 Static:
 
-The server has files saved on it's disks and makes these available to the internet.
+The server has files saved on its disks and makes these available to the internet.
 
 Dynamic:
 
