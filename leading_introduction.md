@@ -46,4 +46,8 @@ Rails is a framework that makes building a website a lot easier and faster. Ther
 
 Ruby is a programming language. Rails is written in this language (thus Ruby on Rails).
 
-Ruby has been created to be fun to use.
+Ruby has been created to be fun to use. And this is what we will do today too: we'll have fun by using Ruby and Rails :)
+
+# What will we do?
+
+We will start by building a simple page with info about yourself. Further on, we will style it and animate it. Then we will slowly feel some pain and understand the need for automation: this is the point where we will move on to Ruby and Ruby on Rails.
