@@ -50,4 +50,8 @@ Ruby has been created to be fun to use. And this is what we will do today too: w
 
 # What will we do?
 
-We will start by building a simple page with info about yourself. Further on, we will style it and animate it. Then we will slowly feel some pain and understand the need for automation: this is the point where we will move on to Ruby and Ruby on Rails.
+-> We will start by building a simple page with info about yourself (HTML)
+
+-> Further on, we will style it and animate it (CSS + JS)
+
+-> Then we will slowly feel some pain and understand the need for automation: this is the point where we will move on to Ruby and Ruby on Rails (Ruby + Ruby on Rails).
