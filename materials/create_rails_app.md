@@ -6,27 +6,34 @@ permalink: /create_rails_app/
 
 # Create the rails app
 
+* download the  <a href="https://railsgirls-be.github.io/railsgirls_guide/materials/introductions.html" target="_blank">introductions.html</a> file to your computer
+
+* open the terminal
+
 {% highlight bash %}
-rails g myapp
-cd myapp
-mv INTRODUCTION_FILE public/
+rails new railsgirls-app
+cd railsgirls-app
+mv --your-downloads-folder-here--/introductions.html public/
+(i.e. mv ~/Downloads/introductions.html public/)
 {% endhighlight %}
 
 ## Start rails app
 
 * `rails s`
-* visit http://localhost:3000/introductions.html
+* visit [http://localhost:3000/introductions.html](http://localhost:3000/introductions.html)
 
 # Create pages controller
 
+* open another terminal window and go to your app directory (`cd railsgirls-app`) to continue
 * `rails g controller pages`
-* Add the route
+* Open the file `config/routes.rb` in your text editor. The first line will look something like that:  `Rails.application.routes.draw do`
+* add the following as the second line of the file
 
 {% highlight ruby %}
 get "/pages/introductions" => 'pages#introductions'
 {% endhighlight %}
 
-* Add the action
+* Now open the file `app/controllers/pages_controller.rb` in your editor. After the first line add the following
 
 {% highlight ruby %}
 def introductions
@@ -34,20 +41,19 @@ def introductions
 end
 {% endhighlight %}
 
-* visit http://localhost:3000/pages/introductions
+* visit [http://localhost:3000/pages/introductions](http://localhost:3000/pages/introductions) 
 * `mv public/introductions.html app/views/pages/introductions.html.erb`
 
-* Remove the render call
+* Go back to the file `app/controllers/pages_controller.rb` and remove the line that starts with `render`.
 
 {% highlight ruby %}
 def introductions
-  render :introductions
 end
 {% endhighlight %}
 
-* visit http://localhost:3000/pages/introductions
+* visit [http://localhost:3000/pages/introductions](http://localhost:3000/pages/introductions)
 
-# Try something dynamic
+# Now let's try something dynamic
 
 * Put the year dynamically in the footer
 
