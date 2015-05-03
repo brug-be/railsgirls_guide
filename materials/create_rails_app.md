@@ -6,11 +6,11 @@ permalink: /create_rails_app/
 
 # Create the rails app
 
-```Bash
+{% highlight bash %}
 rails g myapp
 cd myapp
 mv INTRODUCTION_FILE public/
-```
+{% endhighlight %}
 
 ## Start rails app
 
@@ -22,28 +22,28 @@ mv INTRODUCTION_FILE public/
 * `rails g controller pages`
 * Add the route
 
-```ruby
+{% highlight ruby %}
 get "/pages/introductions" => 'pages#introductions'
-```
+{% endhighlight %}
 
 * Add the action
 
-```ruby
+{% highlight ruby %}
 def introductions
   render text: 'introductions'
 end
-```
+{% endhighlight %}
 
 * visit http://localhost:3000/pages/introductions
 * `mv public/introductions.html app/views/pages/introductions.html.erb`
 
 * Remove the render call
 
-```ruby
+{% highlight ruby %}
 def introductions
   render :introductions
 end
-```
+{% endhighlight %}
 
 * visit http://localhost:3000/pages/introductions
 
@@ -51,27 +51,27 @@ end
 
 * Put the year dynamically in the footer
 
-```erb
+{% highlight erb %}
 <footer>
   Created by 42 in <%= Time.now.year %>.
 </footer>
-```
+{% endhighlight %}
 
 * Show how this also works in IRB and maybe the controller
 
 
-```ruby
+{% highlight ruby %}
 def introductions
   @year = Time.now.year
   render :introductions
 end
-```
+{% endhighlight %}
 
-```erb
+{% highlight erb %}
 <footer>
   Created by 42 in <%= @year %>.
 </footer>
-```
+{% endhighlight %}
 
 Other examples could be the
 
@@ -84,18 +84,18 @@ Indicate that re-writing lists is boring! We don't want to repeat ourselves.
 
 Introduce the idea of arrays for the hobbies and languages lists in the HTML.
 
-```ruby
+{% highlight ruby %}
 def introductions
   @year = Time.now.year
   @hobbies = ['Painting', 'Eating', 'Cooking', 'Whatever']
   @languages = ['Dutch', 'English', 'Html', 'Ruby']
   render :introductions
 end
-```
+{% endhighlight %}
 
 First introduce the list rendering like so (without the classes, or maybe even without HTML.)
 
-```erb
+{% highlight erb %}
 <ul>
   <% @hobbies.each do |hobby| %>
     <li>
@@ -103,11 +103,11 @@ First introduce the list rendering like so (without the classes, or maybe even w
     </li>
   <% end %>
 </ul>
-```
+{% endhighlight %}
 
 In a second pass, you can show how we only need to add the classes/html once, thus making our life easier.
 
-```erb
+{% highlight erb %}
 <ul class="list-group">
   <% @hobbies.each do |hobby| %>
     <li class="list-group-item">
@@ -115,7 +115,7 @@ In a second pass, you can show how we only need to add the classes/html once, th
     </li>
   <% end %>
 </ul>
-```
+{% endhighlight %}
 
 Don't forget to do the same for languages.
 
@@ -123,7 +123,7 @@ If the participant wants to keep the "see more" functionality you can go with 3 
 
 Option 1: Just bring it back, using a each_with_index
 
-```erb
+{% highlight ruby %}
 <ul class="list-group">
   <% @hobbies.each_with_index do |hobby, i| %>
     <li class="list-group-item <% i < 3 ? '' : 'hide' %>">
@@ -131,11 +131,11 @@ Option 1: Just bring it back, using a each_with_index
     </li>
   <% end %>
 </ul>
-```
+{% endhighlight %}
 
 Option 2: Just bring it back, using `first` and `drop`
 
-```erb
+{% highlight erb %}
 <ul class="list-group">
   <% @hobbies.first(3).each do |hobby, i| %>
     <li class="list-group-item">
@@ -148,7 +148,7 @@ Option 2: Just bring it back, using `first` and `drop`
     </li>
   <% end %>
 </ul>
-```
+{% endhighlight %}
 
 Option 3: Talk them out of it
 
@@ -161,15 +161,15 @@ Introduce the idea of having a second page
 * cp app/views/pages/introductions.html.erb app/views/pages/second_page.html.erb
 * Add the route
 
-```ruby
+{% highlight ruby %}
 get "/pages/second_page" => 'pages#second_page'
-```
+{% endhighlight %}
 
 You can now explain the magic of rails, why this works without writing the action in the controller.
 
 To trigger the "need" for layouts we will now add a menu to one of the pages.
 
-```html
+{% highlight html %}
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -197,7 +197,7 @@ To trigger the "need" for layouts we will now add a menu to one of the pages.
     </div>
   </div>
 </nav>
-```
+{% endhighlight %}
 
 Let the participant discover that it only in one page. Prevent them from copy/pasting this to the other page. Explain that we can do better.
 
@@ -219,15 +219,15 @@ Explain that changing the code for each new hobby or language would be very bori
 
 Start with generating a scaffold for hobbies or languages
 
-```
+{% highlight bash %}
 rails g scaffold hobby name
 rake db:create db:migrate
-```
+{% endhighlight %}
 
-```
+{% highlight bash %}
 rails g scaffold language name
 rake db:create db:migrate
-```
+{% endhighlight %}
 
 Show what rails generated give a quick tour of the views and controller. Focus on the model.
 
@@ -235,24 +235,24 @@ Let them create/edit/delete some entries.
 
 Now bring this to their own page.
 
-```ruby
+{% highlight ruby %}
 def introductions
   @year = Time.now.year
   @hobbies = Hobby.all
   @languages = Language.all
   render :introductions
 end
-```
+{% endhighlight %}
 
 This will suck a bit, as rails will put the object inspect into the HTML. explain that now we must either teach the model how to show itself as a piece of text, or have the view use the name (like in the scaffolds.)
 
-``` ruby
+{% highlight ruby %}
 def to_s
   name
 end
-```
+{% endhighlight %}
 
-```erb
+{% highlight erb %}
 <ul class="list-group">
   <% @hobbies.each_with_index do |hobby, i| %>
     <li class="list-group-item <% i < 3 ? '' : 'hide' %>">
@@ -260,6 +260,6 @@ end
     </li>
   <% end %>
 </ul>
-```
+{% endhighlight %}
 
 Show how this works in the console as well.
