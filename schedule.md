@@ -1,3 +1,9 @@
+---
+layout: default
+title: Schedule
+permalink: /schedule/
+--- 
+
 # Rails Girls Brussels Schedule
 
 ## Friday
