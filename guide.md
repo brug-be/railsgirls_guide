@@ -30,3 +30,19 @@ What is important to add in your HTML file, which will be for further use, are t
 Now that we have created our own page, let us see how the browser sees it. Go to your `railsgirls` folder, where your `introduction.html` file is, right click on it and click tab `Open with` and then select your preferred browser.
 
 It's cool to see your page up there, but at the same time, it seems rather dull and not really colourful. Let's do something about this!
+
+### 4. Style your own page
+
+* use simple (inline) css to color some text
+* add spacing to some elements
+* play with font's size
+
+### 5. Inspect a stylished version of the introduction
+
+* discuss with your coach the following file: https://github.com/railsgirls-be/railsgirls_guide/blob/gh-pages/materials/introductions_boostrap_and_js.html
+
+* understand the structure, what is the HTML part, the CSS part and the JS part
+
+* understand what Bootstrap is and how we can use it in our file
+
+* go to: http://getbootstrap.com/ and find some classes to use
