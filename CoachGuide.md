@@ -23,7 +23,7 @@ Some items that are required for following exercises:
 ## hx and p
 
 * Name in H1
-* Soe text in p
+* Some text in p
 
 ## img
 
@@ -31,7 +31,7 @@ Some items that are required for following exercises:
 
 ## list
 
-* Add a few list to the page (intrests, hobbies, known programming languages)
+* Add a few list to the page (interests, hobbies, known programming languages)
 
 # Styling your first HTML Page
 
