@@ -1,4 +1,10 @@
-# Rails Girls Guide
+---
+layout: default
+title: Guide
+permalink: /guide/
+--- 
+
+# Rails Girls Guide - part 1
 
 **Bit by bit you will get there.**
 

@@ -1,9 +1,3 @@
----
-layout: default
-title: Coach Guide
-permalink: /coach_guide/
---- 
-
 # Creating you first HTML page
 
 Create a short “about me” page
@@ -39,7 +33,7 @@ Some items that are required for following exercises:
 
 ## write your own CSS
 
-Use some simple (inline) css to color some text or someting
+Use some simple (inline) css to color some text or something
 
 ## Bootstrap magic
 
