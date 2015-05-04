@@ -55,7 +55,7 @@ end
 
 # Now let's try something dynamic
 
-* Put the year dynamically in the footer
+* Open the file `app/views/pages/introductions.html.erb`. See how we explicitly state the year in the section `<footer>`? Let's have Rails provide the current year for us dynamically. To do that change the code as follows, and reload the page to see that the year is still there.
 
 {% highlight erb %}
 <footer>
@@ -63,8 +63,9 @@ end
 </footer>
 {% endhighlight %}
 
-* Show how this also works in IRB and maybe the controller
+* (Show how this also works in IRB and maybe the controller)
 
+* Now go back to the file `app/controllers/pages_controller.rb`. We'll be introducing a variable to hold the value of the year now. 
 
 {% highlight ruby %}
 def introductions
@@ -72,6 +73,8 @@ def introductions
   render :introductions
 end
 {% endhighlight %}
+
+* And in `app/views/pages/introductions.html.erb`:
 
 {% highlight erb %}
 <footer>
