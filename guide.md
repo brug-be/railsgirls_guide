@@ -14,20 +14,21 @@ permalink: /guide/
 * together with your coach, have a look at: https://github.com/railsgirls-be/railsgirls_guide/blob/gh-pages/materials/introductions.html
 * discuss about general structure, different tags and their purpose
 
-### 3. Write your own HTML file, having as the one above as guide
+### 3. Write your own HTML file, using the one above as guide
 
-First of all, do not copy-paste the content. Write each line yourself as it will greatly help you on the long run.
+First of all, do not copy-paste the content. Write each line yourself as it will greatly help you in the long run.
 
 But before creating our file, let us create a folder for this project, in order to keep track of all the files we create. Open your console and type the following commands:
 
-```
+{% highlight bash %}
 $ mkdir railsgirls         # mkdir command is equivalent to "make directory railsgirls"
 $ cd railsgirls            # we 'enter' the newly created directory using command 'cd'
 $ touch introduction.html  # command 'touch' creates a new file called as indicated
-```
+{% endhighlight %}
 Open your newly created file `introduction.html` in your Sublime editor. Start editing the file with information about yourself.
 
 What is important to add in your HTML file, which will be for further use, are the following elements: 
+
 * your name in h1 tag
 * 2 lists
 * add a picture of yourself
