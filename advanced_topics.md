@@ -31,6 +31,13 @@ Most web apps have some kind of user authentication. There are many reasons to d
 
 [Authentication with devise](http://guides.railsgirls.com/devise/).
 
+## 4. Testing
+
+Testing code is a huge part of using Rails. Testing one method with another method might seem weird in the beginning, but using good frameworks and best practices it is the only way to keep the complexity of a real world application under control. If you would like to explore that, have a look at the 
+
+[TDD introduction](http://guides.railsgirls.com/test-driven-development/).
+
+
 # Is there even more? 
 
 Of course. If you're already done with the above, or didn't find anything you really liked, there are sheer endless possibilities to dive deeper into any of the subjects we already touch upon today. You can check the official [RailsGirls.com list of guides](http://guides.railsgirls.com) for inspiration. 
