@@ -10,13 +10,26 @@ So you went through the basic tutorials, cool. You know what HTML, CSS and JS me
 
 There are a couple of directions you can choose now. Depending where your interest lies, with what you have seen so far. 
 
-## 1. Pushing to github.com
+## 1. Pushing your code to github.com
 
 Software is usually kept in version control systems, to be able to go back in history and deal with different versions of the same files efficiently. Git has become the default in the last 5 years and github.com one of the most popular sites for hosting open source projects. 
 
 This guide will show you some basics of git and how to upload your code to github.com. 
 
 [Go to guide](http://guides.railsgirls.com/github/)
+
+## 2. Putting your app up on the web
+
+Developing software on your computer is nice, but putting it up on the web for everybody to see is the ultimate goal. There are many different ways of deploying a Ruby on Rails app to a server. Heroku is one of the simplest and fastest ways to do that. If you're interested in learning how to do that, have a look at the 
+
+[Heroku guide](http://guides.railsgirls.com/heroku).
+
+
+## 3. Add user authentication
+
+Most web apps have some kind of user authentication. There are many reasons to do this. Protecting your data, protecting the users data, saving preferences .. The concept of users and authentication is an important and interesting one in the web development realm. If you want to give it a shot have a look at this guide 
+
+[Authentication with devise](http://guides.railsgirls.com/devise/).
 
 # Is there even more? 
 
