@@ -225,16 +225,16 @@ Introducing: layouts.
 Now let's add the next level of magic. Let's use the database to store the languages and hobbies, because editing your code every time you get a now hobby is for amateurs. 
 
 {% highlight bash %}
-rails g scaffold hobby name:string
+rails generate scaffold hobby name:string
 rake db:create db:migrate
 {% endhighlight %}
 
 {% highlight bash %}
-rails g scaffold language name:string
+rails generate scaffold language name:string
 rake db:create db:migrate
 {% endhighlight %}
 
-Check out [http://localhost:3000/hobbies](http://localhost:3000/hobbies)
+Check out [http://localhost:3000/hobbies](http://localhost:3000/hobbies) and [http://localhost:3000/languages](http://localhost:3000/languages)
 
 Try out the forms and create, edit and delete a couple of entries.
 
@@ -249,7 +249,7 @@ def introductions
 end
 {% endhighlight %}
 
-Now go check what the page looks like. To fix this add the following code: 
+Now go check what the page looks like. Looks weird?! To fix this add the following code: 
 
 {% highlight erb %}
 <ul class="list-group">
@@ -262,13 +262,18 @@ Now go check what the page looks like. To fix this add the following code:
 {% endhighlight %}
 
 
-# Advanced stuff 
+# The Rails console
 
 Open the rails console: 
 
-* `rails console`
+{% highlight bash %}
+rails console
+{% endhighlight %}
 
-* ask you coach how to add new hobbies
+{% highlight ruby %}
+Language.create(name: 'ruby')
+{% endhighlight %}
 
+And now have another look at: [http://localhost:3000/languages](http://localhost:3000/languages). What changed? 
 
 
