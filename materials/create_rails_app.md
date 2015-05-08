@@ -6,26 +6,29 @@ permalink: /create_rails_app/
 
 # Create the rails app
 
-* download the  <a href="https://railsgirls-be.github.io/railsgirls_guide/materials/introductions.html" target="_blank">introductions.html</a> file to your computer
-
-* open the terminal
+* Open the terminal and create a new Rails app
 
 {% highlight bash %}
 rails new railsgirls-app
 cd railsgirls-app
+{% endhighlight %}
+
+* Have a look how Rails generated a folder structure and a lot of files for you. There are two ways of doing that, in the terminal or with Finder/Explorer. Ask your coach about the details. Once you have seen them, move your ```introductions.html``` to the public folder.  
+
+{% highlight bash %}
 mv --your-downloads-folder-here--/introductions.html public/
 (i.e. mv ~/Downloads/introductions.html public/)
 {% endhighlight %}
 
 ## Start rails app
 
-* `rails s`
+* `rails server`
 * visit [http://localhost:3000/introductions.html](http://localhost:3000/introductions.html)
 
 # Create pages controller
 
 * open another terminal window and go to your app directory (`cd railsgirls-app`) to continue
-* `rails g controller pages`
+* `rails generate controller pages`
 * Open the file `config/routes.rb` in your text editor. The first line will look something like that:  `Rails.application.routes.draw do`
 * add the following as the second line of the file
 
@@ -69,7 +72,7 @@ end
 
 {% highlight ruby %}
 def introductions
-  @year = Time.now.year
+  @name = 'Jane Doe'
   render :introductions
 end
 {% endhighlight %}
@@ -78,8 +81,12 @@ end
 
 {% highlight erb %}
 <footer>
-  Created by 42 in <%= @year %>.
+  Created by <%= @name %> in <%= Time.now.year %>.
 </footer>
+{% endhighlight %}
+
+{% highlight erb %}
+<h1> My name is <%= @name %>.</h1>
 {% endhighlight %}
 
 Other examples could be the
@@ -89,12 +96,24 @@ Other examples could be the
 
 # Iterate over lists
 
-Indicate that re-writing lists is boring! We don't want to repeat ourselves.
+Imagine part of your pages looks like this: 
 
-Introduce the idea of arrays for the hobbies and languages lists in the HTML.
+{% highlight html %}
+<ul>
+    <li>Painting</li>
+    <li>Eating</li>
+    <li>Cooking</li>
+    <li>Whatever</li>
+</ul>
+{% endhighlight %}
+
+Adding another hobby here means you have to repeat writing the HTML tags each and every time. 
+Have a look what we can do using dynamic lists (arrays) in ruby. In the file `app/controllers/pages_controller.rb`
+add the following: 
 
 {% highlight ruby %}
 def introductions
+  @name = 'Jane Doe' 
   @year = Time.now.year
   @hobbies = ['Painting', 'Eating', 'Cooking', 'Whatever']
   @languages = ['Dutch', 'English', 'Html', 'Ruby']
@@ -102,7 +121,7 @@ def introductions
 end
 {% endhighlight %}
 
-First introduce the list rendering like so (without the classes, or maybe even without HTML.)
+* And in `app/views/pages/introductions.html.erb`:
 
 {% highlight erb %}
 <ul>
@@ -114,21 +133,9 @@ First introduce the list rendering like so (without the classes, or maybe even w
 </ul>
 {% endhighlight %}
 
-In a second pass, you can show how we only need to add the classes/html once, thus making our life easier.
-
-{% highlight erb %}
-<ul class="list-group">
-  <% @hobbies.each do |hobby| %>
-    <li class="list-group-item">
-      <%= hobby %>
-    </li>
-  <% end %>
-</ul>
-{% endhighlight %}
-
 Don't forget to do the same for languages.
 
-If the participant wants to keep the "see more" functionality you can go with 3 options.
+(If you want to go wild ask your coach about the following code: 
 
 Option 1: Just bring it back, using a each_with_index
 
@@ -157,26 +164,21 @@ Option 2: Just bring it back, using `first` and `drop`
     </li>
   <% end %>
 </ul>
-{% endhighlight %}
-
-Option 3: Talk them out of it
-
-As and added bonus you could try to make the "show more" link work as real link sending a param to the controller, changing the behaviour of the code.
+{% endhighlight %})
 
 # Introduce a second page and layout
 
 Introduce the idea of having a second page
 
 * cp app/views/pages/introductions.html.erb app/views/pages/second_page.html.erb
-* Add the route
+* Add the route 
 
 {% highlight ruby %}
 get "/pages/second_page" => 'pages#second_page'
 {% endhighlight %}
 
-You can now explain the magic of rails, why this works without writing the action in the controller.
-
 To trigger the "need" for layouts we will now add a menu to one of the pages.
+(Remember to include bootstrap, if you haven't yet.)
 
 {% highlight html %}
 <nav class="navbar navbar-default">
@@ -208,41 +210,33 @@ To trigger the "need" for layouts we will now add a menu to one of the pages.
 </nav>
 {% endhighlight %}
 
-Let the participant discover that it only in one page. Prevent them from copy/pasting this to the other page. Explain that we can do better.
+See that this only appears in one page. Why? 
 
-Explain the concept of layouts.
+Introducing: layouts.
 
-* Create or replace layout in app/views/layouts/application.html.erb
-* Move the common HTML into this file (don't forget the menu)
-* Do not forget the `<% yield %>`
-* Remove the common HTML from the controller action views
-
-Let them discover the awesomeness of layouts.
-
-At this point (if you were using the `@year` variable) the second page might break (not showing it). Explain the scope of variables per action. Maybe even explain the difference between variable with and without an @.
-Fix this issue either by creating a before_action, a helper method or just inlining the code.
+* Open `app/views/layouts/application.html.erb`
+* Move the navbar elements into this file
+* Remove the common HTML from the erb pages
 
 # Adding a DB
 
-Explain that changing the code for each new hobby or language would be very boring. We can add forms and a database for this.
-
-Start with generating a scaffold for hobbies or languages
+Now let's add the next level of magic. Let's use the database to store the languages and hobbies, because editing your code every time you get a now hobby is for amateurs. 
 
 {% highlight bash %}
-rails g scaffold hobby name
+rails g scaffold hobby name:string
 rake db:create db:migrate
 {% endhighlight %}
 
 {% highlight bash %}
-rails g scaffold language name
+rails g scaffold language name:string
 rake db:create db:migrate
 {% endhighlight %}
 
-Show what rails generated give a quick tour of the views and controller. Focus on the model.
+Check out [http://localhost:3000/hobbies](http://localhost:3000/hobbies)
 
-Let them create/edit/delete some entries.
+Try out the forms and create, edit and delete a couple of entries.
 
-Now bring this to their own page.
+Now let's use the hobbies and languages stored in the database. 
 
 {% highlight ruby %}
 def introductions
@@ -253,13 +247,7 @@ def introductions
 end
 {% endhighlight %}
 
-This will suck a bit, as rails will put the object inspect into the HTML. explain that now we must either teach the model how to show itself as a piece of text, or have the view use the name (like in the scaffolds.)
-
-{% highlight ruby %}
-def to_s
-  name
-end
-{% endhighlight %}
+Now go check what the page looks like. To fix this add the following code: 
 
 {% highlight erb %}
 <ul class="list-group">
@@ -271,4 +259,14 @@ end
 </ul>
 {% endhighlight %}
 
-Show how this works in the console as well.
+
+# Advanced stuff 
+
+Open the rails console: 
+
+* `rails console`
+
+* ask you coach how to add new hobbies
+
+
+

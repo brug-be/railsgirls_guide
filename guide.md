@@ -34,6 +34,17 @@ What is important to add in your HTML file, which will be for further use, are t
 * add a picture of yourself
 * write the date today somewhere on the page
 
+Be sure to put the following tags into your page: 
+
+{% highlight html %}
+<h1></h1>
+<h2></h2>
+<ul><li></li></ul>
+<img>
+<a>
+<p>
+{% endhighlight %}
+
 Now that we have created our own page, let us see how the browser sees it. Go to your `railsgirls` folder, where your `introduction.html` file is, right click on it and click tab `Open with` and then select your preferred browser.
 
 It's cool to see your page up there, but at the same time, it seems rather dull and not really colourful. Let's do something about this!
@@ -44,9 +55,14 @@ It's cool to see your page up there, but at the same time, it seems rather dull 
 * add spacing to some elements
 * play with font's size
 
+Be sure to try out the following css tags: ```color, font-size, font-family, background, border```
+For the more adventurous check out ```border-radius, text-decoration, text-align```
+
 ### 5. Inspect a stylished version of the introduction
 
-* discuss with your coach the following file: https://github.com/railsgirls-be/railsgirls_guide/blob/gh-pages/materials/introductions_boostrap_and_js.html
+* discuss with your coach the following 
+<a href="http://railsgirls-be.github.io/railsgirls_guide/materials/introductions_boostrap_and_js.html" target="_blank">page</a>
+(<a href="https://github.com/railsgirls-be/railsgirls_guide/blob/gh-pages/materials/introductions_boostrap_and_js.html" target="_blank">file</a>)
 
 * understand the structure, what is the HTML part, the CSS part and the JS part
 
