@@ -39,6 +39,8 @@ get "/pages/introductions" => 'pages#introductions'
 * Now open the file `app/controllers/pages_controller.rb` in your editor. After the first line add the following
 
 {% highlight ruby %}
+layout false
+
 def introductions
   render text: 'introductions'
 end
