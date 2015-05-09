@@ -180,8 +180,15 @@ Introduce the idea of having a second page
 get "/pages/second_page" => 'pages#second_page'
 {% endhighlight %}
 
-To trigger the "need" for layouts we will now add a menu to one of the pages.
-(Remember to include bootstrap, if you haven't yet.)
+* Make some changes on the page and open [http://localhost:3000/pages/second_page](http://localhost:3000/pages/second_page)
+
+You have now created a dynamic web application with multiple interconnected pages. Feels good, right? :)
+
+* High five your neighbours.
+
+Now, let's add a menu to connect the pages. This will trigger the need for something called "layouts"
+
+Add this code and remember to include bootstrap, if you haven't yet (ask your coach).
 
 {% highlight html %}
 <nav class="navbar navbar-default">
@@ -220,6 +227,7 @@ Introducing: layouts.
 * Open `app/views/layouts/application.html.erb`
 * Move the navbar elements into this file
 * Remove the common HTML from the erb pages
+* Remove `layout false`
 
 # Adding a DB
 
@@ -227,12 +235,13 @@ Now let's add the next level of magic. Let's use the database to store the langu
 
 {% highlight bash %}
 rails generate scaffold hobby name:string
-rake db:create db:migrate
+rake db:create
+rake db:migrate
 {% endhighlight %}
 
 {% highlight bash %}
 rails generate scaffold language name:string
-rake db:create db:migrate
+rake db:migrate
 {% endhighlight %}
 
 Check out [http://localhost:3000/hobbies](http://localhost:3000/hobbies) and [http://localhost:3000/languages](http://localhost:3000/languages)
@@ -249,7 +258,11 @@ def introductions
 end
 {% endhighlight %}
 
-Now go check what the page looks like. Looks weird?! To fix this add the following code: 
+Now go check what the page looks like.
+
+Does it look weird?!
+
+To fix this add the following code: 
 
 {% highlight erb %}
 <ul class="list-group">
