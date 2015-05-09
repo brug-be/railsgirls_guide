@@ -42,7 +42,7 @@ get "/pages/introductions" => 'pages#introductions'
 layout false
 
 def introductions
-  render text: 'introductions'
+  render file: 'public/introductions'
 end
 {% endhighlight %}
 
