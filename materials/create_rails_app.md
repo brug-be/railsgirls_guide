@@ -145,7 +145,7 @@ Option 1: Just bring it back, using a each_with_index
 {% highlight erb %}
 <ul class="list-group">
   <% @hobbies.each_with_index do |hobby, i| %>
-    <li class="list-group-item <% i < 3 ? '' : 'hide' %>">
+    <li class="list-group-item <%= i < 3 ? '' : 'hide' %>">
       <%= hobby %>
     </li>
   <% end %>
