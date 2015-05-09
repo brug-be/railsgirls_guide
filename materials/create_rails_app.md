@@ -47,6 +47,9 @@ end
 {% endhighlight %}
 
 * visit [http://localhost:3000/pages/introductions](http://localhost:3000/pages/introductions) 
+
+Does it work?
+
 * `mv public/introductions.html app/views/pages/introductions.html.erb`
 
 * Go back to the file `app/controllers/pages_controller.rb` and remove the line that starts with `render`.
@@ -75,7 +78,6 @@ end
 {% highlight ruby %}
 def introductions
   @name = 'Jane Doe'
-  render :introductions
 end
 {% endhighlight %}
 
@@ -119,7 +121,6 @@ def introductions
   @year = Time.now.year
   @hobbies = ['Painting', 'Eating', 'Cooking', 'Whatever']
   @languages = ['Dutch', 'English', 'Html', 'Ruby']
-  render :introductions
 end
 {% endhighlight %}
 
@@ -141,7 +142,7 @@ Don't forget to do the same for languages.
 
 Option 1: Just bring it back, using a each_with_index
 
-{% highlight ruby %}
+{% highlight erb %}
 <ul class="list-group">
   <% @hobbies.each_with_index do |hobby, i| %>
     <li class="list-group-item <% i < 3 ? '' : 'hide' %>">
@@ -245,7 +246,6 @@ def introductions
   @year = Time.now.year
   @hobbies = Hobby.all
   @languages = Language.all
-  render :introductions
 end
 {% endhighlight %}
 
