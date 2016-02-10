@@ -7,5 +7,5 @@ baseurl: /railsgirls_guide
 
 # Build settings
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 permalink: /:title
