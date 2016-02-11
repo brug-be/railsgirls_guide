@@ -13,3 +13,9 @@ To setup the project on your machine locally:
 ## Hosted instance
 
 A current version of this guide is hosted on [github pages](http://railsgirls-be.github.io/railsgirls_guide/).
+
+
+## Contribution
+
+If you want to contribute please open an issue and let's discuss or send us a pull request.
+
