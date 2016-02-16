@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Intro
-permalink: /introduction/
---- 
+permalink: /coaches/intro/
+---
 
 # Introduction for the lead of the event
 

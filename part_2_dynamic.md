@@ -1,10 +1,10 @@
 ---
 layout: default
 title: Create Rails App
-permalink: /create_rails_app/
+permalink: /part_2/
 ---
 
-# Create the rails app
+# Part 2 - Creating the Rails app
 
 * Open the terminal and create a new Rails app
 
@@ -13,7 +13,7 @@ rails new railsgirls-app
 cd railsgirls-app
 {% endhighlight %}
 
-* Have a look how Rails generated a folder structure and a lot of files for you. There are two ways of doing that, in the terminal or with Finder/Explorer. Ask your coach about the details. Once you have seen them, move your ```introductions.html``` to the public folder.  
+* Have a look how Rails generated a folder structure and a lot of files for you. There are two ways of doing that, in the terminal or with Finder/Explorer. Ask your coach about the details. Once you have seen them, move your ```introductions.html``` to the public folder.
 
 {% highlight bash %}
 mv --your-downloads-folder-here--/introductions.html public/
@@ -46,7 +46,7 @@ def introductions
 end
 {% endhighlight %}
 
-* visit [http://localhost:3000/pages/introductions](http://localhost:3000/pages/introductions) 
+* visit [http://localhost:3000/pages/introductions](http://localhost:3000/pages/introductions)
 
 Does it work?
 
@@ -73,7 +73,7 @@ end
 
 * (Show how this also works in IRB and maybe the controller)
 
-* Now go back to the file `app/controllers/pages_controller.rb`. We'll be introducing a variable to hold the value of the year now. 
+* Now go back to the file `app/controllers/pages_controller.rb`. We'll be introducing a variable to hold the value of the year now.
 
 {% highlight ruby %}
 def introductions
@@ -100,7 +100,7 @@ Other examples could be the
 
 # Iterate over lists
 
-Imagine part of your pages looks like this: 
+Imagine part of your pages looks like this:
 
 {% highlight html %}
 <ul>
@@ -111,13 +111,13 @@ Imagine part of your pages looks like this:
 </ul>
 {% endhighlight %}
 
-Adding another hobby here means you have to repeat writing the HTML tags each and every time. 
+Adding another hobby here means you have to repeat writing the HTML tags each and every time.
 Have a look what we can do using dynamic lists (arrays) in ruby. In the file `app/controllers/pages_controller.rb`
-add the following: 
+add the following:
 
 {% highlight ruby %}
 def introductions
-  @name = 'Jane Doe' 
+  @name = 'Jane Doe'
   @year = Time.now.year
   @hobbies = ['Painting', 'Eating', 'Cooking', 'Whatever']
   @languages = ['Dutch', 'English', 'Html', 'Ruby']
@@ -138,7 +138,7 @@ end
 
 Don't forget to do the same for languages.
 
-(If you want to go wild ask your coach about the following code: 
+(If you want to go wild ask your coach about the following code:
 
 Option 1: Just bring it back, using a each_with_index
 
@@ -174,7 +174,7 @@ Option 2: Just bring it back, using `first` and `drop`
 Introduce the idea of having a second page
 
 * cp app/views/pages/introductions.html.erb app/views/pages/second_page.html.erb
-* Add the route 
+* Add the route
 
 {% highlight ruby %}
 get "/pages/second_page" => 'pages#second_page'
@@ -220,7 +220,7 @@ Add this code and remember to include bootstrap, if you haven't yet (ask your co
 </nav>
 {% endhighlight %}
 
-See that this only appears in one page. Why? 
+See that this only appears in one page. Why?
 
 Introducing: layouts.
 
@@ -231,7 +231,7 @@ Introducing: layouts.
 
 # Adding a DB
 
-Now let's add the next level of magic. Let's use the database to store the languages and hobbies, because editing your code every time you get a now hobby is for amateurs. 
+Now let's add the next level of magic. Let's use the database to store the languages and hobbies, because editing your code every time you get a now hobby is for amateurs.
 
 {% highlight bash %}
 rails generate scaffold hobby name:string
@@ -248,7 +248,7 @@ Check out [http://localhost:3000/hobbies](http://localhost:3000/hobbies) and [ht
 
 Try out the forms and create, edit and delete a couple of entries.
 
-Now let's use the hobbies and languages stored in the database. 
+Now let's use the hobbies and languages stored in the database.
 
 {% highlight ruby %}
 def introductions
@@ -262,7 +262,7 @@ Now go check what the page looks like.
 
 Does it look weird?!
 
-To fix this add the following code: 
+To fix this add the following code:
 
 {% highlight erb %}
 <ul class="list-group">
@@ -277,7 +277,7 @@ To fix this add the following code:
 
 # The Rails console
 
-Open the rails console: 
+Open the rails console:
 
 {% highlight bash %}
 rails console
@@ -287,11 +287,11 @@ rails console
 Language.create(name: 'ruby')
 {% endhighlight %}
 
-And now have another look at: [http://localhost:3000/languages](http://localhost:3000/languages). What changed? 
+And now have another look at: [http://localhost:3000/languages](http://localhost:3000/languages). What changed?
 
 # Rubygems
 
-Ask the coach "what is a gem?" and be prepared for an interesting lecture about programmer happiness. 
+Ask the coach "what is a gem?" and be prepared for an interesting lecture about programmer happiness.
 
 Try adding the gem [youtube_addy](https://github.com/datwright/youtube_addy) to your `Gemfile` and creating a new scafford for videos.
 

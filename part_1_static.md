@@ -1,10 +1,10 @@
 ---
 layout: default
 title: Guide
-permalink: /guide/
---- 
+permalink: /part_1/
+---
 
-# Rails Girls Guide - part 1
+# Part 1 - Creating an HTML page
 
 **Bit by bit you will get there.**
 
@@ -27,14 +27,14 @@ $ touch introduction.html # command 'touch' creates a new file called as indicat
 {% endhighlight %}
 Open your newly created file `introduction.html` in your Sublime editor. Start editing the file with information about yourself.
 
-What is important to add in your HTML file, which will be for further use, are the following elements: 
+What is important to add in your HTML file, which will be for further use, are the following elements:
 
 * your name in h1 tag
 * 2 lists (your hobbies and your languages for example)
 * add a picture of yourself
 * write today's date somewhere on the page
 
-Be sure to put the following tags into your page: 
+Be sure to put the following tags into your page:
 
 {% highlight html %}
 <h1></h1>
@@ -71,7 +71,7 @@ For the more adventurous check out ```border-radius, text-decoration, text-align
 
 ### 5. Inspect a stylished version of the introduction
 
-* discuss with your coach the following 
+* discuss with your coach the following
 <a href="http://railsgirls-be.github.io/railsgirls_guide/materials/introductions_boostrap_and_js.html" target="_blank">page</a>
 (<a href="https://github.com/railsgirls-be/railsgirls_guide/blob/gh-pages/materials/introductions_boostrap_and_js.html" target="_blank">source</a>)
 
