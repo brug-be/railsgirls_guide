@@ -23,9 +23,9 @@ But before creating our file, let us create a folder for this project, in order 
 {% highlight bash %}
 $ mkdir railsgirls        # mkdir is equivalent to "make directory railsgirls"
 $ cd railsgirls           # we 'enter' the new directory using command 'cd'
-$ touch introduction.html # command 'touch' creates a new file called as indicated
+$ touch introductions.html # command 'touch' creates a new file called as indicated
 {% endhighlight %}
-Open your newly created file `introduction.html` in your Sublime editor. Start editing the file with information about yourself.
+Open your newly created file `introductions.html` in your Sublime editor. Start editing the file with information about yourself.
 
 What is important to add in your HTML file, which will be for further use, are the following elements:
 
@@ -54,7 +54,7 @@ Here are some more tags for extra inspiration, but you don't have to use them:
 <pre></pre>
 {% endhighlight %}
 
-Now that we have created our own page, let us see how the browser sees it. Go to your `railsgirls` folder, where your `introduction.html` file is, right click on it and click tab `Open with` and then select your preferred browser.
+Now that we have created our own page, let us see how the browser sees it. Go to your `railsgirls` folder, where your `introductions.html` file is, right click on it and click tab `Open with` and then select your preferred browser.
 
 It's cool to see your page up there, but at the same time, it seems rather dull and not really colourful. Let's do something about this!
 
