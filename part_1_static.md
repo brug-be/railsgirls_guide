@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Guide
+title: Part 1
 permalink: /part_1/
 ---
 

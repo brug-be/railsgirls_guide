@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Create Rails App
+title: Part 2
 permalink: /part_2/
 ---
 
