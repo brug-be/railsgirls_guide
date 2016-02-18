@@ -11,7 +11,7 @@ permalink: /part_1/
 ### 1. Start with an introduction on web technologies given by coach.
 
 ### 2. Inspect an HTML file.
-* together with your coach, have a look at: [introductions.html](https://railsgirls-be.github.io/railsgirls_guide/materials/introductions.html) [(source)](https://github.com/railsgirls-be/railsgirls_guide/blob/gh-pages/materials/introductions.html)
+* together with your coach, have a look at: [about.html](/railsgirls_guide/materials/about.html) [(source)](https://github.com/railsgirls-be/railsgirls_guide/blob/gh-pages/materials/about.html)
 * discuss about general structure, different tags and their purpose
 
 ### 3. Write your own HTML file, using the one above as guide
@@ -23,9 +23,9 @@ But before creating our file, let us create a folder for this project, in order 
 {% highlight bash %}
 $ mkdir railsgirls        # mkdir is equivalent to "make directory railsgirls"
 $ cd railsgirls           # we 'enter' the new directory using command 'cd'
-$ touch introductions.html # command 'touch' creates a new file called as indicated
+$ touch about.html # command 'touch' creates a new file called as indicated
 {% endhighlight %}
-Open your newly created file `introductions.html` in your Sublime editor. Start editing the file with information about yourself.
+Open your newly created file `about.html` in your Sublime editor. Start editing the file with information about yourself.
 
 What is important to add in your HTML file, which will be for further use, are the following elements:
 
@@ -54,7 +54,7 @@ Here are some more tags for extra inspiration, but you don't have to use them:
 <pre></pre>
 {% endhighlight %}
 
-Now that we have created our own page, let us see how the browser sees it. Go to your `railsgirls` folder, where your `introductions.html` file is, right click on it and click tab `Open with` and then select your preferred browser.
+Now that we have created our own page, let us see how the browser sees it. Go to your `railsgirls` folder, where your `about.html` file is, right click on it and click tab `Open with` and then select your preferred browser.
 
 It's cool to see your page up there, but at the same time, it seems rather dull and not really colourful. Let's do something about this!
 
@@ -69,11 +69,11 @@ Ask the coach to show you how!
 Be sure to try out the following css tags: ```color, font-size, font-family, background, border```
 For the more adventurous check out ```border-radius, text-decoration, text-align```
 
-### 5. Inspect a stylished version of the introduction
+### 5. Inspect a stylished version of the about page
 
 * discuss with your coach the following
-<a href="http://railsgirls-be.github.io/railsgirls_guide/materials/introductions_boostrap_and_js.html" target="_blank">page</a>
-(<a href="https://github.com/railsgirls-be/railsgirls_guide/blob/gh-pages/materials/introductions_boostrap_and_js.html" target="_blank">source</a>)
+<a href="http://railsgirls-be.github.io/railsgirls_guide/materials/about_boostrap_and_js.html" target="_blank">page</a>
+(<a href="https://github.com/railsgirls-be/railsgirls_guide/blob/gh-pages/materials/about.html" target="_blank">source</a>)
 
 * understand the structure, what is the HTML part, the CSS part and the JS part
 

@@ -13,17 +13,17 @@ rails new railsgirls-app
 cd railsgirls-app
 {% endhighlight %}
 
-* Have a look how Rails generated a folder structure and a lot of files for you. There are two ways of doing that, in the terminal or with Finder/Explorer. Ask your coach about the details. Once you have seen them, move your ```introductions.html``` to the public folder.
+* Have a look how Rails generated a folder structure and a lot of files for you. There are two ways of doing that, in the terminal or with Finder/Explorer. Ask your coach about the details. Once you have seen them, move your ```about.html``` to the public folder.
 
 {% highlight bash %}
-mv --your-downloads-folder-here--/introductions.html public/
-(i.e. mv ~/Downloads/introductions.html public/)
+mv --your-downloads-folder-here--/about.html public/
+(i.e. mv ~/Downloads/about.html public/)
 {% endhighlight %}
 
 ## Start rails app
 
 * `rails server`
-* visit [http://localhost:3000/introductions.html](http://localhost:3000/introductions.html)
+* visit [http://localhost:3000/about.html](http://localhost:3000/about.html)
 
 # Create pages controller
 
@@ -33,7 +33,7 @@ mv --your-downloads-folder-here--/introductions.html public/
 * add the following as the second line of the file
 
 {% highlight ruby %}
-get "/pages/introductions" => 'pages#introductions'
+get "/pages/about" => 'pages#about'
 {% endhighlight %}
 
 * Now open the file `app/controllers/pages_controller.rb` in your editor. After the first line add the following
@@ -41,29 +41,29 @@ get "/pages/introductions" => 'pages#introductions'
 {% highlight ruby %}
 layout false
 
-def introductions
-  render file: 'public/introductions'
+def about
+  render file: 'public/about'
 end
 {% endhighlight %}
 
-* visit [http://localhost:3000/pages/introductions](http://localhost:3000/pages/introductions)
+* visit [http://localhost:3000/pages/about](http://localhost:3000/pages/about)
 
 Does it work?
 
-* `mv public/introductions.html app/views/pages/introductions.html.erb`
+* `mv public/about.html app/views/pages/about.html.erb`
 
 * Go back to the file `app/controllers/pages_controller.rb` and remove the line that starts with `render`.
 
 {% highlight ruby %}
-def introductions
+def about
 end
 {% endhighlight %}
 
-* visit [http://localhost:3000/pages/introductions](http://localhost:3000/pages/introductions)
+* visit [http://localhost:3000/pages/about](http://localhost:3000/pages/about)
 
 # Now let's try something dynamic
 
-* Open the file `app/views/pages/introductions.html.erb`. See how we explicitly state the year in the section `<footer>`? Let's have Rails provide the current year for us dynamically. To do that change the code as follows, and reload the page to see that the year is still there.
+* Open the file `app/views/pages/about.html.erb`. See how we explicitly state the year in the section `<footer>`? Let's have Rails provide the current year for us dynamically. To do that change the code as follows, and reload the page to see that the year is still there.
 
 {% highlight erb %}
 <footer>
@@ -76,12 +76,12 @@ end
 * Now go back to the file `app/controllers/pages_controller.rb`. We'll be introducing a variable to hold the value of the year now.
 
 {% highlight ruby %}
-def introductions
+def about
   @name = 'Jane Doe'
 end
 {% endhighlight %}
 
-* And in `app/views/pages/introductions.html.erb`:
+* And in `app/views/pages/about.html.erb`:
 
 {% highlight erb %}
 <footer>
@@ -116,7 +116,7 @@ Have a look what we can do using dynamic lists (arrays) in ruby. In the file `ap
 add the following:
 
 {% highlight ruby %}
-def introductions
+def about
   @name = 'Jane Doe'
   @year = Time.now.year
   @hobbies = ['Painting', 'Eating', 'Cooking', 'Whatever']
@@ -124,7 +124,7 @@ def introductions
 end
 {% endhighlight %}
 
-* And in `app/views/pages/introductions.html.erb`:
+* And in `app/views/pages/about.html.erb`:
 
 {% highlight erb %}
 <ul>
@@ -173,7 +173,7 @@ Option 2: Just bring it back, using `first` and `drop`
 
 Introduce the idea of having a second page
 
-* cp app/views/pages/introductions.html.erb app/views/pages/second_page.html.erb
+* cp app/views/pages/about.html.erb app/views/pages/second_page.html.erb
 * Add the route
 
 {% highlight ruby %}
@@ -210,7 +210,7 @@ Add this code and remember to include bootstrap, if you haven't yet (ask your co
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="/pages/introductions">Introduction</a></li>
+            <li><a href="/pages/about">About</a></li>
             <li><a href="/pages/second_page">Second page</a></li>
           </ul>
         </li>
@@ -251,7 +251,7 @@ Try out the forms and create, edit and delete a couple of entries.
 Now let's use the hobbies and languages stored in the database.
 
 {% highlight ruby %}
-def introductions
+def about
   @year = Time.now.year
   @hobbies = Hobby.all
   @languages = Language.all
