@@ -11,7 +11,7 @@ permalink: /part_1/
 ### 1. Start with an introduction on web technologies given by coach.
 
 ### 2. Inspect an HTML file.
-* together with your coach, have a look at: [introductions.html](https://railsgirls-be.github.io/materials/introductions.html) [(source)](https://github.com/railsgirls-be/railsgirls_guide/blob/gh-pages/materials/introductions.html)
+* together with your coach, have a look at: [introductions.html](https://railsgirls-be.github.io/railsgirls_guide/materials/introductions.html) [(source)](https://github.com/railsgirls-be/railsgirls_guide/blob/gh-pages/materials/introductions.html)
 * discuss about general structure, different tags and their purpose
 
 ### 3. Write your own HTML file, using the one above as guide
@@ -72,7 +72,7 @@ For the more adventurous check out ```border-radius, text-decoration, text-align
 ### 5. Inspect a stylished version of the introduction
 
 * discuss with your coach the following
-<a href="http://railsgirls-be.github.io/materials/introductions_boostrap_and_js.html" target="_blank">page</a>
+<a href="http://railsgirls-be.github.io/railsgirls_guide/materials/introductions_boostrap_and_js.html" target="_blank">page</a>
 (<a href="https://github.com/railsgirls-be/railsgirls_guide/blob/gh-pages/materials/introductions_boostrap_and_js.html" target="_blank">source</a>)
 
 * understand the structure, what is the HTML part, the CSS part and the JS part
