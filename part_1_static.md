@@ -73,7 +73,7 @@ For the more adventurous check out ```border-radius, text-decoration, text-align
 
 * discuss with your coach the following
 <a href="http://railsgirls-be.github.io/railsgirls_guide/materials/about_boostrap_and_js.html" target="_blank">page</a>
-(<a href="https://github.com/railsgirls-be/railsgirls_guide/blob/gh-pages/materials/about.html" target="_blank">source</a>)
+(<a href="https://github.com/railsgirls-be/railsgirls_guide/blob/gh-pages/materials/about_boostrap_and_js.html" target="_blank">source</a>)
 
 * understand the structure, what is the HTML part, the CSS part and the JS part
 
