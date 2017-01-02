@@ -138,7 +138,7 @@ end
 
 Don't forget to do the same for languages.
 
-(If you want to go wild ask your coach about the following code:
+## If you want to go wild ask your coach about the following code:
 
 Option 1: Just bring it back, using a each_with_index
 
