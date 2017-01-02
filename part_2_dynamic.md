@@ -162,12 +162,12 @@ Option 2: Just bring it back, using `first` and `drop`
     </li>
   <% end %>
   <% @hobbies.drop(3).each do |hobby, i| %>
-    <li class="list-group-item">
+    <li class="list-group-item hide">
       <%= hobby %>
     </li>
   <% end %>
 </ul>
-{% endhighlight %})
+{% endhighlight %}
 
 # Introduce a second page and layout
 
