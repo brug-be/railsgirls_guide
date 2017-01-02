@@ -267,7 +267,7 @@ To fix this add the following code:
 {% highlight erb %}
 <ul class="list-group">
   <% @hobbies.each_with_index do |hobby, i| %>
-    <li class="list-group-item <% i < 3 ? '' : 'hide' %>">
+    <li class="list-group-item <%= i < 3 ? '' : 'hide' %>">
       <%= hobby.name %>
     </li>
   <% end %>
@@ -296,5 +296,3 @@ Ask the coach "what is a gem?" and be prepared for an interesting lecture about 
 Try adding the gem [youtube_addy](https://github.com/datwright/youtube_addy) to your `Gemfile` and creating a new scafford for videos. NOTE that the keyword `raw` needs to be added to make the gem work correctly (`<%= raw YouTubeAddy.youtube_embed_url("your-url-here",420,315) %>`).
 
 Ask the coach for his/her favourite gems.
-
-
