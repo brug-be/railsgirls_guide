@@ -6,13 +6,13 @@ The Rails Girls Brussels team is working on a new Rails Girls guide, which does 
 
 To setup the project on your machine locally:
 
-* clone the project to your machine: `git clone git@github.com:railsgirls-be/railsgirls_guide.git`
+* clone the project to your machine: `git clone git@github.com:brug-be/railsgirls_guide.git`
 * run `bundle install` to install dependencies
 * run `jekyll serve` to start the local server
 
 ## Hosted instance
 
-A current version of this guide is hosted on [github pages](http://railsgirls-be.github.io/railsgirls_guide/).
+A current version of this guide is hosted on [github pages](http://brug-be.github.io/railsgirls_guide/).
 
 
 ## Contribution
