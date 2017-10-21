@@ -162,7 +162,7 @@ Option 2: Just bring it back, using `first` and `drop`
     </li>
   <% end %>
   <% @hobbies.drop(3).each do |hobby, i| %>
-    <li class="list-group-item hide">
+    <li class="list-group-item" style="display: none;">
       <%= hobby %>
     </li>
   <% end %>
@@ -191,31 +191,17 @@ Now, let's add a menu to connect the pages. This will trigger the need for somet
 Add this code and remember to include bootstrap, if you haven't yet (ask your coach).
 
 {% highlight html %}
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">My cool page</a>
-    </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">My cool page</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="/pages/about">About</a></li>
-            <li><a href="/pages/second_page">Second page</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><a class="nav-link" href="/pages/about">About</a></li>
+      <li><a class="nav-link" href="/pages/second_page">Second page</a></li>
+    </ul>
   </div>
 </nav>
 {% endhighlight %}
