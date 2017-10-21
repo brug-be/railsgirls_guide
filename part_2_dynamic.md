@@ -162,7 +162,7 @@ Option 2: Just bring it back, using `first` and `drop`
     </li>
   <% end %>
   <% @hobbies.drop(3).each do |hobby, i| %>
-    <li class="list-group-item hide">
+    <li class="list-group-item" style="display: none;">
       <%= hobby %>
     </li>
   <% end %>
