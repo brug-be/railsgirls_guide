@@ -81,18 +81,18 @@ Save it and go have a look at the result in your browser.
 Let's bring the two parts of this guide together. We want to integrate the about page we created in the first part into our Rails app. For that we will use our Rails' generator again and let it create all the setup we need for that page. To do that open the terminal again and type the following line:
 
 {% highlight bash %}
-rails generator controller pages about
+rails generate controller pages about
 {% endhighlight %}
 
 If you open [http://localhost:3000/pages/about](http://localhost:3000/pages/about) you will see the page that Rails has created for us. It understands the URL and shows us some placeholder content. Let's now put our about page from earlier in that place. Open the file mentioned on the web page in your editor. Now paste the complete content from our about.html page into this file.
 
 visit [http://localhost:3000/pages/about](http://localhost:3000/pages/about)
 
-## Now let's try something dynamic
+## Something dynamic
 
-Now that our page is part of a Rails app there are many possibilities of making the content more dynamic.
+Now that our page is part of a Rails app there are many possibilities of making the content more dynamic. You might have noticed the `.erb` extension on our view file earlier. This allows us to run actual ruby inside our html. Whenever you see `<%= %>` or `<% %>` this means you're in Ruby land within HTML. Here are a couple of examples to see that at work:
 
-* Open the file `app/views/pages/about.html.erb`. See how we explicitly state the year in the section `<footer>`? Let's have Rails provide the current year for us dynamically. To do that change the code as follows, and reload the page to see that the year is still there.
+Open the file `app/views/pages/about.html.erb`. See how we explicitly state the year in the section `<footer>`? Let's have Rails provide the current year for us dynamically. To do that change the code as follows, and reload the page to see that the year is still there.
 
 {% highlight erb %}
 <footer>
@@ -190,16 +190,10 @@ Now go check what the page looks like.
 
 Does it look weird?!
 
-To fix this add the following code:
+To fix this replace the line `<%= language %>` with:
 
 {% highlight erb %}
-<ul class="list-group">
-  <% @languages.each do |language| %>
-    <li class="list-group-item">
-      <%= language.name %>
-    </li>
-  <% end %>
-</ul>
+<%= language.name %>
 {% endhighlight %}
 
 # Let's add a contact page and feel the need for a layout
@@ -226,7 +220,7 @@ We need to add something called a route so the server knows what to do if someon
 get "/pages/contact" => 'pages#contact'
 {% endhighlight %}
 
-Let's see what we've got [http://localhost:3000/pages/contact](http://localhost:3000/pages/second_page).
+Let's see what we've got [http://localhost:3000/pages/contact](http://localhost:3000/pages/contact).
 
 You have now created a dynamic web application with multiple interconnected pages. Feels good, right? :)
 
@@ -266,7 +260,7 @@ Add this code on top of your contact page and remember to include bootstrap, if 
 </nav>
 {% endhighlight %}
 
-See that this only appears in one page. Why?
+Find your pages in the dropdown menu. See that this only appears in one page. Why?
 
 Introducing: layouts.
 
