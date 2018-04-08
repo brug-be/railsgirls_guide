@@ -81,10 +81,10 @@ Save it and go have a look at the result in your browser.
 Let's bring the two parts of this guide together. We want to integrate the about page we created in the first part into our Rails app. For that we will use our Rails' generator again and let it create all the setup we need for that page. To do that open the terminal again and type the following line:
 
 {% highlight bash %}
-rails generate controller pages about
+rails generator controller pages about
 {% endhighlight %}
 
-If you open [http://localhost:3000/pages/about](http://localhost:3000/pages/about) you will notice that Rails created an about page for us. It understands the URL and shows us some placeholder content. Let's now put our about page from earlier in that place. Open the file mentioned on the web page in your editor. Let's now paste the complete content from our about.html page into this file.
+If you open [http://localhost:3000/pages/about](http://localhost:3000/pages/about) you will see the page that Rails has created for us. It understands the URL and shows us some placeholder content. Let's now put our about page from earlier in that place. Open the file mentioned on the web page in your editor. Now paste the complete content from our about.html page into this file.
 
 visit [http://localhost:3000/pages/about](http://localhost:3000/pages/about)
 
@@ -127,28 +127,26 @@ Other examples could be the
 * Calculate age of the participant
 * Try a dynamic image using some API or something...
 
-# Iterate over lists
+### Iterate over lists
 
 Imagine part of your pages looks like this:
 
 {% highlight html %}
 <ul>
-    <li>Painting</li>
-    <li>Eating</li>
-    <li>Cooking</li>
+    <li>French</li>
+    <li>English</li>
+    <li>Clingon</li>
     <li>Whatever</li>
 </ul>
 {% endhighlight %}
 
-Adding another hobby here means you have to repeat writing the HTML tags each and every time.
+Adding another language here means you have to repeat writing the HTML tags each and every time.
 Have a look what we can do using dynamic lists (arrays) in ruby. In the file `app/controllers/pages_controller.rb`
 add the following:
 
 {% highlight ruby %}
 def about
-  @name = 'Jane Doe'
   @year = Time.now.year
-  @hobbies = ['Painting', 'Eating', 'Cooking', 'Whatever']
   @languages = ['Dutch', 'English', 'Html', 'Ruby']
 end
 {% endhighlight %}
@@ -157,67 +155,86 @@ end
 
 {% highlight erb %}
 <ul>
-  <% @hobbies.each do |hobby| %>
+  <% @languages.each do |language| %>
     <li>
-      <%= hobby %>
+      <%= language %>
     </li>
   <% end %>
 </ul>
 {% endhighlight %}
 
-Don't forget to do the same for languages.
 
-## If you want to go wild ask your coach about the following code:
+### And now from the database
 
-Option 1: Just bring it back, using a each_with_index
+We're ready for the next level of magic: Let's use the database to store the languages, because editing your code every time you learn a new language is for amateurs.
 
-{% highlight erb %}
-<ul class="list-group">
-  <% @hobbies.each_with_index do |hobby, i| %>
-    <li class="list-group-item <%= i < 3 ? '' : 'hide' %>">
-      <%= hobby %>
-    </li>
-  <% end %>
-</ul>
+{% highlight bash %}
+rails generate scaffold language name:string
+rake db:migrate
 {% endhighlight %}
 
-Option 2: Just bring it back, using `first` and `drop`
+Check out [http://localhost:3000/languages](http://localhost:3000/languages)
 
-{% highlight erb %}
-<ul class="list-group">
-  <% @hobbies.first(3).each do |hobby, i| %>
-    <li class="list-group-item">
-      <%= hobby %>
-    </li>
-  <% end %>
-  <% @hobbies.drop(3).each do |hobby, i| %>
-    <li class="list-group-item hide">
-      <%= hobby %>
-    </li>
-  <% end %>
-</ul>
-{% endhighlight %}
+Try out the forms and create, edit and delete a couple of entries.
 
-# Introduce a second page and layout
-
-Introduce the idea of having a second page
-
-* cp app/views/pages/about.html.erb app/views/pages/second_page.html.erb
-* Add the route
+Now see how we can use the languages stored in the database. For that we tell the controller to load the information from the database. Open the file `app/controllers/pages_controller.rb` in your editor and add the line about languages.
 
 {% highlight ruby %}
-get "/pages/second_page" => 'pages#second_page'
+def about
+  @year = Time.now.year
+  @languages = Language.all
+end
 {% endhighlight %}
 
-* Make some changes on the page and open [http://localhost:3000/pages/second_page](http://localhost:3000/pages/second_page)
+Now go check what the page looks like.
+
+Does it look weird?!
+
+To fix this add the following code:
+
+{% highlight erb %}
+<ul class="list-group">
+  <% @languages.each do |language| %>
+    <li class="list-group-item">
+      <%= language.name %>
+    </li>
+  <% end %>
+</ul>
+{% endhighlight %}
+
+# Let's add a contact page and feel the need for a layout
+
+We want to add another page to our blog that contains our contact information. Instead of using the generator we'll do this manually so you get to see the steps that are invovled. No worries there is no need to learn those by heart. Just follow along and let's see what happens.
+
+Open a new file in your editor and save it as `app/views/pages/contact.html.erb`. Copy paste the following content in it and save again:
+
+{% highlight html %}
+<h1>Contact</h1>
+
+<p>
+  You can contact the author of this block under a@bc.de
+</p>
+
+<p>
+  To learn more about the author <a href="/pages/about">click here</a>.
+</p>
+{% endhighlight %}
+
+We need to add something called a route so the server knows what to do if someone visits the URL `/pages/contact`. For that open the file `config/routes.rb` in your editor and add the following line directly above `get 'pages/about'`.
+
+{% highlight ruby %}
+get "/pages/contact" => 'pages#contact'
+{% endhighlight %}
+
+Let's see what we've got [http://localhost:3000/pages/contact](http://localhost:3000/pages/second_page).
 
 You have now created a dynamic web application with multiple interconnected pages. Feels good, right? :)
 
 * High five your neighbours.
 
-Now, let's add a menu to connect the pages. This will trigger the need for something called "layouts"
+Now, let's add a menu to connect the pages.
 
-Add this code and remember to include bootstrap, if you haven't yet (ask your coach).
+Add this code on top of your contact page and remember to include bootstrap, if you haven't yet (ask your coach).
 
 {% highlight html %}
 <nav class="navbar navbar-default">
@@ -240,7 +257,7 @@ Add this code and remember to include bootstrap, if you haven't yet (ask your co
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="/pages/about">About</a></li>
-            <li><a href="/pages/second_page">Second page</a></li>
+            <li><a href="/pages/contact">Contact</a></li>
           </ul>
         </li>
       </ul>
@@ -256,52 +273,6 @@ Introducing: layouts.
 * Open `app/views/layouts/application.html.erb`
 * Move the navbar elements into this file
 * Remove the common HTML from the erb pages
-* Remove `layout false`
-
-# Adding a DB
-
-Now let's add the next level of magic. Let's use the database to store the languages and hobbies, because editing your code every time you get a now hobby is for amateurs.
-
-{% highlight bash %}
-rails generate scaffold hobby name:string
-rake db:create
-rake db:migrate
-{% endhighlight %}
-
-{% highlight bash %}
-rails generate scaffold language name:string
-rake db:migrate
-{% endhighlight %}
-
-Check out [http://localhost:3000/hobbies](http://localhost:3000/hobbies) and [http://localhost:3000/languages](http://localhost:3000/languages)
-
-Try out the forms and create, edit and delete a couple of entries.
-
-Now let's use the hobbies and languages stored in the database.
-
-{% highlight ruby %}
-def about
-  @year = Time.now.year
-  @hobbies = Hobby.all
-  @languages = Language.all
-end
-{% endhighlight %}
-
-Now go check what the page looks like.
-
-Does it look weird?!
-
-To fix this add the following code:
-
-{% highlight erb %}
-<ul class="list-group">
-  <% @hobbies.each_with_index do |hobby, i| %>
-    <li class="list-group-item <%= i < 3 ? '' : 'hide' %>">
-      <%= hobby.name %>
-    </li>
-  <% end %>
-</ul>
-{% endhighlight %}
 
 
 # The Rails console
