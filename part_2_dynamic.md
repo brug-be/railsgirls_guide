@@ -11,8 +11,8 @@ permalink: /part_2/
 Open the terminal to create a new Rails app
 
 {% highlight bash %}
-rails new railsgirls-app
-cd railsgirls-app
+rails new railsgirls-blog
+cd railsgirls-blog
 {% endhighlight %}
 
 Find the project directory in the Finder/Explorer. Have a look how Rails generated a folder structure and a lot of files for you. Ask your coach about the details.
@@ -22,7 +22,7 @@ Find the project directory in the Finder/Explorer. Have a look how Rails generat
 
 A Rails app can deliver dynamically generated content with the help of the Ruby programming language. This is why we can't just open a file anymore in the browser. We need a Rails server that will allow for all the magic to happen.
 
-You start your Rails server as follows. Open you terminal and type the following:
+You start your Rails server as follows. Open you terminal (in the `railsgirls-blog` folder) and type the following:
 
 {% highlight bash %}
 rails server
