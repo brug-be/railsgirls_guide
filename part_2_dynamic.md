@@ -15,12 +15,12 @@ rails new railsgirls-app
 cd railsgirls-app
 {% endhighlight %}
 
-Have a look how Rails generated a folder structure and a lot of files for you. Find the project directory in the Finder/Explorer. Ask your coach about the details.
+Find the project directory in the Finder/Explorer. Have a look how Rails generated a folder structure and a lot of files for you. Ask your coach about the details.
 
 
 ## Starting the Rails server
 
-A Rails app can deliver dynamically generated content with the help of the Ruby programming language and Rails. This is why we can't just open a file anymore in the browser. We need a Rails server that will allow for all the magic to happen.
+A Rails app can deliver dynamically generated content with the help of the Ruby programming language. This is why we can't just open a file anymore in the browser. We need a Rails server that will allow for all the magic to happen.
 
 You start your Rails server as follows. Open you terminal and type the following:
 
@@ -36,7 +36,7 @@ It's not much but the page indicates that everything worked fine until now and t
 
 ## The power of Rails: creating a scaffold
 
-One (not so secret) weapon of Rails is it's ability to quickly get you started using scaffolds. Since we're trying to create blog here, let's put everything into place to create, update and show our blog articles. To do that type the following commands into your terminal:
+One (not so secret) weapon of Rails is its ability to quickly get you started using scaffolds. Since we're trying to create blog here, let's put everything into place to create, update and show our blog articles. To do that type the following commands into your terminal:
 
 {% highlight bash %}
 rails generate scaffold article title:string body:text author:string
@@ -217,7 +217,7 @@ Open a new file in your editor and save it as `app/views/pages/contact.html.erb`
 We need to add something called a route so the server knows what to do if someone visits the URL `/pages/contact`. For that open the file `config/routes.rb` in your editor and add the following line directly above `get 'pages/about'`.
 
 {% highlight ruby %}
-get "/pages/contact" => 'pages#contact'
+get '/pages/contact' => 'pages#contact'
 {% endhighlight %}
 
 Let's see what we've got [http://localhost:3000/pages/contact](http://localhost:3000/pages/contact).
