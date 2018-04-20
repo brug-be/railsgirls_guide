@@ -20,23 +20,25 @@ Find the project directory in the Finder/Explorer. Have a look how Rails generat
 
 ## Starting the Rails server
 
-A Rails app can deliver dynamically generated content with the help of the Ruby programming language. This is why we can't just open a file anymore in the browser. We need a Rails server that will allow for all the magic to happen.
+A Rails app can deliver dynamically generated content with the help of the Ruby programming language. This is why we can't just open a file anymore in the browser. We need a program that will combine the templates with the dynamic information to create the final HTML. This program is called the Rails server.
 
-You start your Rails server as follows. Open you terminal (in the `railsgirls-blog` folder) and type the following:
+To start the Rails server, open you terminal (in the `railsgirls-blog` folder) and type the following:
 
 {% highlight bash %}
 rails server
 {% endhighlight %}
 
-Once it's started up, you can go visit your app already under
+Once it's started up, you can go visit your app under
 
 [http://localhost:3000/](http://localhost:3000/).
 
-It's not much but the page indicates that everything worked fine until now and the server is running.
+The page indicates that everything worked fine and the server is running.
 
 ## The power of Rails: creating a scaffold
 
-One (not so secret) weapon of Rails is its ability to quickly get you started using scaffolds. Since we're trying to create blog here, let's put everything into place to create, update and show our blog articles. To do that type the following commands into your terminal:
+One (not so secret) weapon of Rails is its ability to quickly get you started using scaffolds. Since we're trying to create blog here, let's put everything into place to create, update and show our blog articles.
+
+To do that type the following commands into your terminal:
 
 {% highlight bash %}
 rails generate scaffold article title:string body:text author:string
@@ -48,7 +50,7 @@ Now you can checkout your app again in the browser. If you check
 
 [http://localhost:3000/](http://localhost:3000/)
 
-you're not going to notice any difference, since we didn't tell our app about what to do when someone hits the home page just yet. For now you still have to know where to look for the articles, which is under
+You're not going to notice any difference, since we haven't told our app about what to do when someone hits the home page just yet. For now you still have to know where to look for the articles, which is under
 
 [http://localhost:3000/articles](http://localhost:3000/articles).
 
@@ -186,15 +188,13 @@ def about
 end
 {% endhighlight %}
 
-Now go check what the page looks like.
-
-Does it look weird?!
-
-To fix this replace the line `<%= language %>` with:
+In `app/views/pages/about.html.erb` replace the line `<%= language %>` with:
 
 {% highlight erb %}
 <%= language.name %>
 {% endhighlight %}
+
+Now go check what the page looks like.
 
 # Let's add a contact page and feel the need for a layout
 
