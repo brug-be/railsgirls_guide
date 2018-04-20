@@ -1,6 +1,6 @@
 ## New Rails Girls guide
 
-The Rails Girls Brussels team is working on a new Rails Girls guide, which does not start with a dive in Rails, but rather starts with an HTML page. Then we are slowly adding other concepts, making the bridge to why we want to automate things and have Rails in place.
+The Rails Girls Brussels team is working on a new Rails Girls guide, which does not start with a dive into Rails, but rather starts with an HTML page. Then we are slowly adding other concepts, making the bridge to why we want to automate things and have Rails in place.
 
 ## Local setup
 
@@ -12,7 +12,7 @@ To setup the project on your machine locally:
 
 ## Hosted instance
 
-A current version of this guide is hosted on [github pages](http://brug-be.github.io/railsgirls_guide/).
+A current version of this guide is hosted on [github pages](http://brug-be.github.io/railsgirls_guide/). The short URL to get to the guide is [http://bit.ly/RG-BXL](http://bit.ly/RG-BXL).
 
 
 ## Contribution
