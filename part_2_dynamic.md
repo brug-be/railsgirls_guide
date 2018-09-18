@@ -42,8 +42,8 @@ To do that type the following commands into your terminal:
 
 {% highlight bash %}
 rails generate scaffold article title:string body:text author:string
-rake db:create
-rake db:migrate
+rails db:create
+rails db:migrate
 {% endhighlight %}
 
 Now you can checkout your app again in the browser. If you check
@@ -172,7 +172,7 @@ We're ready for the next level of magic: Let's use the database to store the lan
 
 {% highlight bash %}
 rails generate scaffold language name:string
-rake db:migrate
+rails db:migrate
 {% endhighlight %}
 
 Check out [http://localhost:3000/languages](http://localhost:3000/languages)
