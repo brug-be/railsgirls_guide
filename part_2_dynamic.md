@@ -168,7 +168,7 @@ end
 
 ### And now from the database
 
-We're ready for the next level of magic: Let's use the database to store the languages, because editing your code every time you learn a new language is for amateurs.
+We're ready for the next level of magic: Let's use the database to store the languages, because editing your code every time you learn a new language is going to get boring fast. ;)
 
 {% highlight bash %}
 rails generate scaffold language name:string
