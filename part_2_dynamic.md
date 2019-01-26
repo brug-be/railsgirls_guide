@@ -287,6 +287,6 @@ And now have another look at: [http://localhost:3000/languages](http://localhost
 
 Ask the coach "what is a gem?" and be prepared for an interesting lecture about programmer happiness.
 
-Try adding the gem [youtube_addy](https://github.com/datwright/youtube_addy) to your `Gemfile` and creating a new scafford for videos. NOTE that the keyword `raw` needs to be added to make the gem work correctly (`<%= raw YouTubeAddy.youtube_embed_url("your-url-here",420,315) %>`).
+Try adding the gem [youtube_addy](https://rubygems.org/gems/youtube_addy) to your `Gemfile` and creating a new scafford for videos. NOTE that the keyword `raw` needs to be added to make the gem work correctly (`<%= raw YouTubeAddy.youtube_embed_url("your-url-here",420,315) %>`).
 
 Ask the coach for his/her favourite gems.
