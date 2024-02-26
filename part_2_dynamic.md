@@ -34,6 +34,8 @@ Once it's started up, you can go visit your app under
 
 The page indicates that everything worked fine and the server is running.
 
+You can compare the server with any other computer application you start. This means you also need to stop it when you no longer need it. Do this with the keyboard shortcut `CTRL-C` inside the command line tool
+
 ## The power of Rails: creating a scaffold
 
 One (not so secret) weapon of Rails is its ability to quickly get you started using scaffolds. Since we're trying to create blog here, let's put everything into place to create, update and show our blog articles.
@@ -282,6 +284,8 @@ Language.create(name: 'ruby')
 {% endhighlight %}
 
 And now have another look at: [http://localhost:3000/languages](http://localhost:3000/languages). What changed?
+
+You can compare the console a bit with the rails server. It is also just an application. If you want to quit the rails console use the keyboard shortcut `CTRL-D` or by typing `exit` and pressing `ENTER`.
 
 # Rubygems
 
